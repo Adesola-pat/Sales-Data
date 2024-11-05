@@ -50,11 +50,8 @@ This inolves exploring amd manipulation of data to answer some questions as carr
 This has to do with the several functions or line of codes (queries) used during the Analysis to query the data set;
 
 ```SQL
-SELECT * FROM [dbo].[SALARY]
-where STAFF_ID = 'AB503'
-
-select * from payment
-where Payment_Method = 'cash'
+select * from [dbo].[LITA Capstone Project]
+Select count (*) from [dbo].[LITA Capstone Project]
 ```
 
 ### Data Visualization
