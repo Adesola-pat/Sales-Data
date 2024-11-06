@@ -50,8 +50,30 @@ This inolves exploring amd manipulation of data to answer some questions as carr
 This has to do with the several functions or line of codes (queries) used during the Analysis to query the data set;
 
 ```SQL
-select * from [dbo].[LITA Capstone Project]
-Select count (*) from [dbo].[LITA Capstone Project]
+-----total revenue by subscription type------
+select [SubscriptionType],
+SUM([Revenue]) as totalRevenue
+from [dbo].[LITA Capstone Project]
+group by [SubscriptionType];
+
+-------top 3 regions by subscription cancellation-----
+select top 3 'Region'
+count '[CustomerID]' as
+cancellations
+from [dbo].[LITA Capstone Project]
+where cancelled =1
+group by [Region]
+order by cancellations desc;
+
+------ total number of active and cancelled subscription-----
+select
+	sum(case when cancelled = 0
+then 1 else 0 end) as
+activesubscriptions,
+	sum(case when cancelled =1
+Then 1 else 0 end) as
+cancelledsubscriptions
+from [dbo].[LITA Capstone Project]
 ```
 
 ### Data Visualization
